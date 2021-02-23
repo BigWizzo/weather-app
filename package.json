@@ -1,0 +1,34 @@
+{
+  "name": "webpack-template",
+  "version": "1.0.0",
+  "description": "webpack template",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "webpack serve",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "keywords": [],
+  "author": "will nyamunokora",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^10.1.x",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.2",
+    "eslint": "^6.8.x",
+    "eslint-config-airbnb-base": "^14.1.x",
+    "eslint-plugin-import": "^2.20.x",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.0.0",
+    "html-webpack-plugin": "^5.1.0",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.3.x",
+    "stylelint-config-standard": "^20.0.x",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "3.17.x",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
