@@ -1,4 +1,4 @@
-// import './styles.css';
+import './styles.css';
 
 function getWeather(city){
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386`, {mode: 'cors'})
@@ -6,16 +6,15 @@ function getWeather(city){
       return response.json();
     })
     .then(function(response) {
-      temperature = response.main.temp
-      const temp = document.querySelector('#temp');
-      temp.textContent = temperature;
+      console.log(response.main.temp)
+      document.querySelector("#current-temp").textContent = response.main.temperature;
+      console.log(response.main)
     });
 }
 
 document.querySelector('#city-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const cityName = document.querySelector('#city-name').value;
-  console.log(cityName);
   if (cityName === '') {
     return alert('Please fill in all the fields', 'danger');
   } else {
