@@ -1,24 +1,21 @@
 import './styles.css';
 
 function getWeather(city){
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386`, {mode: 'cors'})
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386&units=metric`, {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
     .then(function(response) {
-      console.log(response.weather[0].icon)
+      console.log(response)
       const temp = document.querySelector("#current-temp");
       temp.innerHTML = `
       <div class="card">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            <span class="font-weight-bolder">${response.name}</span>
+            <span>Temperature:  </span><span class="font-weight-bolder">${response.main.temp}°C</span>
           </li>
           <li class="list-group-item">
-            <span class="font-weight-bolder">Temperature: </span><span>${response.main.temp}</span>
-          </li>
-          <li class="list-group-item">
-            <span class="font-weight-bolder"><img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt=""></span><span>${response.weather[0].description}</span>
+          <span>${response.weather[0].description}</span><span class="font-weight-bolder"><img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt=""></span>
           </li>
         </ul>
       </div>
