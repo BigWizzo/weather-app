@@ -1,7 +1,7 @@
 {
-  "name": "webpack-template",
+  "name": "weather-app",
   "version": "1.0.0",
-  "description": "webpack template",
+  "description": "weather app",
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack serve",
@@ -26,7 +26,7 @@
     "stylelint": "^13.3.x",
     "stylelint-config-standard": "^20.0.x",
     "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "3.17.x",
+    "stylelint-scss": "^3.17.x",
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
