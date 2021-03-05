@@ -7,9 +7,11 @@ function getWeather(city){
       temperature = response.main.temp
       const temp = document.querySelector('#temp');
       temp.textContent = temperature;
-
-      console.log(response.main);
     });
 }
 
-getWeather('Harare');
+document.querySelector('#city-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const cityName = document.querySelector('#city-name').value;
+  getWeather(cityName);
+})

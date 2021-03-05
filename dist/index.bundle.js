@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("function getWeather(city){\n  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386`, {mode: 'cors'})\n    .then(function(response) {\n      return response.json();\n    })\n    .then(function(response) {\n      temperature = response.main.temp\n      const temp = document.querySelector('#temp');\n      temp.textContent = temperature;\n\n      console.log(response.main);\n    });\n}\n\ngetWeather('Harare');\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("function getWeather(city){\n  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386`, {mode: 'cors'})\n    .then(function(response) {\n      return response.json();\n    })\n    .then(function(response) {\n      temperature = response.main.temp\n      const temp = document.querySelector('#temp');\n      temp.textContent = temperature;\n    });\n}\n\ndocument.querySelector('#city-form').addEventListener('submit', (e) => {\n  e.preventDefault();\n  const cityName = document.querySelector('#city-name').value;\n  getWeather(cityName);\n})\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
