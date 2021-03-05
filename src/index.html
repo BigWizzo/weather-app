@@ -10,22 +10,24 @@
     <title>Weather App</title>
   </head>
   <body class="body" id="body">
-    <div class="form-div">
-      <form class="city-form" id="city-form">
-        <div class="form-group">
-          <label for="city">Weather App</label>
-          <input type="text" class="form-control" id="city-name">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
-    <div class="">
+    <div class="content container text-center" id="content">
+      <h1 class="m-5">Weather App</h1>
+      <div class="form-div">
+        <form class="city-form" id="city-form">
+          <div class="form-group">
+            <input type="text" class="form-control" id="city-name" placeholder="Enter City">
+          </div>
+          <button type="button" class="btn btn-info btn-lg btn-block">Submit</button>
+        </form>
+      </div>
+      <hr>
       <div class="">
-        <h5 class="">Temprature</h5>
-        <p class="temp" id="temp"></p>
+        <div class="">
+          <h5 class="">Temprature</h5>
+          <p class="temp" id="temp"></p>
+        </div>
       </div>
     </div>
-    <div class="content" id="content"></div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

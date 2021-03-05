@@ -1,3 +1,5 @@
+// import './styles.css';
+
 function getWeather(city){
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386`, {mode: 'cors'})
     .then(function(response) {
