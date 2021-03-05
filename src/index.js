@@ -13,5 +13,10 @@ function getWeather(city){
 document.querySelector('#city-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const cityName = document.querySelector('#city-name').value;
-  getWeather(cityName);
+  console.log(cityName);
+  if (cityName === '') {
+    return alert('Please fill in all the fields', 'danger');
+  } else {
+      getWeather(cityName);
+  }
 })
