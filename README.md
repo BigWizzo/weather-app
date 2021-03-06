@@ -1,7 +1,7 @@
-# What To Do
+# Weather App
 
-- Javascript app for showing current weather of major cities accross the world.
-- User can toggle the temperature between Fahrenheits and Celsius.
+- Javascript app for showing current weather of major cities across the world.
+- User can toggle the temperature between Fahrenheit and Celsius.
 
 ## Live Demo
 
