@@ -23,6 +23,27 @@ const unitDiv = () => {
   `;
 };
 
+function getWeather(city, item) {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386&units=${item}`, { mode: 'cors' })
+    .then((response) => response.json())
+    .then((response) => {
+      const temp = document.querySelector('#current-temp');
+      temp.innerHTML = `
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="font-weight-bolder">${response.main.temp}°</span>
+          </li>
+          <li class="list-group-item">
+          <span>${response.weather[0].description}</span><span class="font-weight-bolder"><img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt=""></span>
+          </li>
+        </ul>
+      </div>
+      `;
+    });
+}
+
+
 document.querySelector('#city-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const cityName = document.querySelector('#city-name').value;
@@ -33,26 +54,7 @@ document.querySelector('#city-form').addEventListener('submit', (e) => {
     document.querySelectorAll('input[name="unitRadio"]').forEach((elem) => {
       elem.addEventListener('change', (event) => {
         const item = event.target.value;
-        function getWeather(city) {
-          fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386&units=${item}`, { mode: 'cors' })
-            .then((response) => response.json())
-            .then((response) => {
-              const temp = document.querySelector('#current-temp');
-              temp.innerHTML = `
-              <div class="card">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <span class="font-weight-bolder">${response.main.temp}°</span>
-                  </li>
-                  <li class="list-group-item">
-                  <span>${response.weather[0].description}</span><span class="font-weight-bolder"><img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png" alt=""></span>
-                  </li>
-                </ul>
-              </div>
-              `;
-            });
-        }
-        getWeather(cityName);
+        getWeather(cityName, item);
       });
     });
   }
