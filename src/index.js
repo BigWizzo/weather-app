@@ -21,7 +21,7 @@ const unitDiv = () => {
       <label class="form-check-label" for="exampleRadios2">Fahrenheit</label>
     </div>
   `;
-}
+};
 
 document.querySelector('#city-form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -29,17 +29,15 @@ document.querySelector('#city-form').addEventListener('submit', (e) => {
   if (cityName === '') {
     showAlert('Please fill in all the fields', 'danger');
   } else {
-    unitDiv()
+    unitDiv();
     document.querySelectorAll('input[name="unitRadio"]').forEach((elem) => {
-      elem.addEventListener("change", function(event) {
+      elem.addEventListener('change', (event) => {
         const item = event.target.value;
-        function getWeather(city){
-          fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386&units=${item}`, {mode: 'cors'})
-            .then(function(response) {
-              return response.json();
-            })
-            .then(function(response) {
-              const temp = document.querySelector("#current-temp");
+        function getWeather(city) {
+          fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386&units=${item}`, { mode: 'cors' })
+            .then((response) => response.json())
+            .then((response) => {
+              const temp = document.querySelector('#current-temp');
               temp.innerHTML = `
               <div class="card">
                 <ul class="list-group list-group-flush">
@@ -56,6 +54,6 @@ document.querySelector('#city-form').addEventListener('submit', (e) => {
         }
         getWeather(cityName);
       });
-    })
+    });
   }
-})
+});
