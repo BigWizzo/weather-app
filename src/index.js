@@ -9,20 +9,6 @@ function showAlert(message, className) {
   setTimeout(() => document.querySelector('.alert').remove(), 3000);
 }
 
-const unitDiv = () => {
-  const unitWrap = document.querySelector('.unit-wrap');
-  unitWrap.innerHTML = `
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="unitRadio" id="exampleRadios1" value="metric">
-      <label class="form-check-label" for="exampleRadios1">Celsius</label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="unitRadio" id="exampleRadios2" value="imperial">
-      <label class="form-check-label" for="exampleRadios2">Fahrenheit</label>
-    </div>
-  `;
-};
-
 function getWeather(city, item) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5b18a07839188e5de8e8db9b8a49386&units=${item}`, { mode: 'cors' })
     .then((response) => response.json())
@@ -40,9 +26,25 @@ function getWeather(city, item) {
         </ul>
       </div>
       `;
+    }).catch(() => {
+      showAlert('Enter a valid city', 'danger');
     });
 }
 
+const unitDiv = () => {
+  const unitWrap = document.querySelector('.unit-wrap');
+  unitWrap.innerHTML = `
+    <div class="form-check form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="flexCheckChecked"
+        checked
+      />
+      <label class="form-check-label" for="flexCheckChecked">Celcius</label>
+    </div>
+  `;
+}
 
 document.querySelector('#city-form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -51,11 +53,14 @@ document.querySelector('#city-form').addEventListener('submit', (e) => {
     showAlert('Please fill in all the fields', 'danger');
   } else {
     unitDiv();
-    document.querySelectorAll('input[name="unitRadio"]').forEach((elem) => {
-      elem.addEventListener('change', (event) => {
-        const item = event.target.value;
-        getWeather(cityName, item);
-      });
-    });
+    const unit = document.querySelector('#flexCheckChecked');
+    console.log(unit.checked)
+      if (unit.checked) {
+        console.log('metric')
+        getWeather(cityName, 'metric');;
+      } else {
+        console.log('imperial')
+        getWeather(cityName, 'imperial');;
+      }    
   }
 });
