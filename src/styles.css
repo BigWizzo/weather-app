@@ -4,7 +4,7 @@
   background-size: cover;
 }
 
-.jumbotron {
+.day {
   background: linear-gradient(to bottom right, #52525200, #00000000),
     url(https://images.pexels.com/photos/531972/pexels-photo-531972.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
   background-size: cover;
