@@ -2,7 +2,7 @@ import "./styles.css";
 
 function getWeather(city) {
   const api = "e5b18a07839188e5de8e8db9b8a49386";
-  const iconImg = document.getElementById("icon");
+  const imgSpan = document.querySelector(".img-span");
   const jumbotron = document.querySelector(".jumbotron");
   const location = document.querySelector("#location");
   const desc = document.querySelector(".description");
@@ -13,10 +13,8 @@ function getWeather(city) {
       const { temp } = data.main;
       const place = data.name;
       const { description, icon } = data.weather[0];
-      const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
       const fahrenheit = (temp * 9) / 5 + 32;
-      iconImg.src = iconUrl;
-      console.log(icon)
+      imgSpan.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png" class="icon" id="icon">`
       if (icon.slice(-1) == 'd') {
         jumbotron.className = 'jumbotron text-light p-3 rounded day';
       } else if (icon.slice(-1) == 'n') {
@@ -30,15 +28,15 @@ function getWeather(city) {
       <label class="form-check-label c" for="flexCheckChecked"></label>
     `;
       const tempC = document.querySelector(".c");
-      tempC.textContent = `${temp.toFixed(2)} °Celcius`;
+      tempC.textContent = `${temp} °Celcius`;
       const unit = document.querySelector("#flexCheckChecked");
       unit.addEventListener("click", function () {
-        if (tempC.textContent == `${temp.toFixed(2)} °Celcius`) {
-          tempC.textContent = `${fahrenheit.toFixed(2)} °Fahrenheit`;
+        if (tempC.textContent == `${temp} °Celcius`) {
+          tempC.textContent = `${fahrenheit} °Fahrenheit`;
         } else if (
-          tempC.textContent == `${fahrenheit.toFixed(2)} °Fahrenheit`
+          tempC.textContent == `${fahrenheit} °Fahrenheit`
         ) {
-          tempC.textContent = `${temp.toFixed(2)} °Celcius`;
+          tempC.textContent = `${temp} °Celcius`;
         }
       });
     })
