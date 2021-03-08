@@ -1,3 +1,5 @@
+import showAlert from "./index";
+
 export default function getWeather(city) {
   const api = "e5b18a07839188e5de8e8db9b8a49386";
   const imgSpan = document.querySelector(".img-span");
