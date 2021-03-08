@@ -22,11 +22,15 @@
     <div class="content container text-center" id="content">
       <h1 class="m-5">Weather App</h1>
       <div class="alert-div"></div>
-      <div class="info">
-        <h4>Sunrise: <span class="sunrise">No Information Available</span></h4>
-        <h4>Sunset: <span class="sunset">No Information Available</span></h4>
+      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="icon">
+      <div class="form-div">
+        <form class="city-form" id="city-form">
+          <div class="form-group">
+            <input type="text" class="form-control" id="city-name" placeholder="Enter City">
+          </div>
+          <button type="submit" class="btn btn-info btn-lg btn-block">Submit</button>
+        </form>
       </div>
-      <img src="./screenshot.png" id="icon">
       <hr>
     </div>
     <div class="weather">
@@ -36,13 +40,8 @@
       </div>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="flexCheckChecked" checked/>
-        <label class="form-check-label c" for="flexCheckChecked">Celcius</label>
+        <label class="form-check-label c" for="flexCheckChecked"></label>
       </div>
-      <!-- <div class="temp"> -->
-        <!-- <div class="c">Error</div> -->
-        <!-- <div class="circle"></div> -->
-        <!-- <div class="f">Error</div> -->
-      <!-- </div> -->
     </div>
   </body>
 </html>
