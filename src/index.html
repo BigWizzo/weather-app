@@ -20,19 +20,28 @@
   </head>
   <body class="body" id="body">
     <div class="content container text-center" id="content">
-      <h1 class="m-5">Weather App</h1>
-      <div class="alert-div"></div>
-      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="icon">
-      <div class="form-div">
-        <form class="city-form" id="city-form">
-          <div class="form-group">
-            <input type="text" class="form-control" id="city-name" placeholder="Enter City">
+      <div class="header">
+        <h1 class="display-4 font-weight-bolder  m-5 ">Weather App</h1>
+        <div class="alert-div"></div>
+        <div class="form-div">
+          <form class="city-form" id="city-form">
+            <div class="form-group">
+              <input type="text" class="form-control" id="city-name" placeholder="Enter City">
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-info mt-3" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="jumbotron text-light p-3">
+          <h3 class="location" id="location"></h3>
+          <div class="desc-wrap">
+            <span><img src="http://openweathermap.org/img/wn/10d@2x.png" class="icon" id="icon"></span>
+            <span class="description" id="description"></span>
           </div>
-          <button type="submit" class="btn btn-info btn-lg btn-block">Submit</button>
-        </form>
+          <div class="form-check form-switch"></div>
+        </div>
       </div>
-      <hr>
     </div>
-    <div class="weather"></div>
   </body>
 </html>
