@@ -4,6 +4,7 @@
 
 - Javascript app for showing current weather of major cities across the world.
 - User can toggle the temperature between Fahrenheit and Celsius.
+- The app changes depending on time period, i.e night or day.
 
 ## Live Demo
 
