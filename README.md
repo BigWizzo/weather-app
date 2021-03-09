@@ -5,7 +5,7 @@
 
 ## Live Demo
 
-[Live version: https://github.com/bigwizzo/weather-app.git](https://bigwizzo.github.io/weather-app/)
+[Live version: https://bigwizzo.github.io/weather-app/](https://bigwizzo.github.io/weather-app/)
 
 ## Built With
 
